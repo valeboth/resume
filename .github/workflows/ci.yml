@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # `npm install` (not `npm ci`): the lockfile is generated on macOS, and npm's
+      # optional-dependency handling omits Linux-only native binaries (esbuild),
+      # which makes `npm ci` fail on CI's Linux runner. `npm install` fetches the
+      # right platform binaries for the runner. See npm/cli#4828.
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build (dry-run)
+        run: npm run build
