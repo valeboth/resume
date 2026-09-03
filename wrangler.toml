@@ -1,0 +1,31 @@
+# Resume website — Cloudflare Workers configuration (IaC, versioned in the repo).
+# One Worker serves the static site (public/) AND the /api/views counter.
+# No secrets live here.
+
+name = "resume"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+# workers.dev disabled: we only use the custom domain resume.valegboth.win.
+workers_dev = false
+
+# --- Static frontend (Workers Static Assets) ---
+# The Worker serves the files in public/ and the /api routes on one origin.
+# Assets take priority: GET / -> index.html, /style.css, /resume.pdf -> files;
+# routes without a matching file (e.g. /api/views) reach the Worker.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# --- Custom domain ---
+# Requires the valegboth.win zone to be in the same Cloudflare account.
+# On deploy, wrangler provisions the DNS record + TLS certificate automatically.
+[[routes]]
+pattern = "resume.valegboth.win"
+custom_domain = true
+
+# --- Workers KV (visitor view counter) ---
+# Create it once, then paste the returned id below:
+#   npx wrangler kv namespace create VIEWS
+[[kv_namespaces]]
+binding = "VIEWS"
+id = "ee75ab5782ae4d36ae7262c20b36cd09"

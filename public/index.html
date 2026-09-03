@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valerian Gabriel Both — DevOps Intern</title>
+    <meta
+      name="description"
+      content="Resume of Valerian Gabriel Both — DevOps Intern based in Cluj-Napoca, Romania."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__intro">
+          <h1 class="name">Valerian Gabriel Both</h1>
+          <p class="title">DevOps Intern</p>
+          <p class="location">Cluj-Napoca, Romania</p>
+        </div>
+        <div class="header__actions">
+          <a class="btn" href="/resume.pdf" download="Both_Valerian_Resume.pdf">
+            <span aria-hidden="true">↓</span> Download Resume
+          </a>
+        </div>
+      </header>
+
+      <!-- Contact -->
+      <ul class="contact">
+        <li>
+          <a href="mailto:valeriangboth97@gmail.com">valeriangboth97@gmail.com</a>
+        </li>
+        <li><a href="tel:+40755565445">0755 565 445</a></li>
+        <li>
+          <a href="https://github.com/valeboth" target="_blank" rel="noopener"
+            >github.com/valeboth</a
+          >
+        </li>
+      </ul>
+
+      <!-- Summary -->
+      <section class="section">
+        <h2 class="section__title">Summary</h2>
+        <p class="summary">
+          Passionate about technology and learning new things every day. Currently
+          a DevOps Intern who enjoys understanding how systems work and automating
+          things, with a genuine drive to learn by doing. Motivated, curious and
+          always looking for opportunities to put my skills into practice.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section class="section">
+        <h2 class="section__title">Experience</h2>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">DevOps Engineer Intern</h3>
+            <span class="entry__date">Jun 2026 – Present</span>
+          </div>
+          <p class="entry__org">Betfair</p>
+          <ul class="entry__points">
+            <li>
+              Part of a central DevOps team, supporting development teams in a
+              global, cross-functional environment to ensure smooth and reliable
+              deployments.
+            </li>
+            <li>
+              Perform AWS operational tasks like auditing and cleaning up
+              resources, managing S3 buckets, and running DNS analysis across
+              Cloudflare.
+            </li>
+            <li>
+              Investigate and troubleshoot deployment issues, working from incident
+              and service-request queues.
+            </li>
+            <li>
+              Support CI/CD pipelines using Jenkins and GitHub Actions; script and
+              automate tasks to improve team workflows and dependency management.
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">Associate Gaming Promo Operations</h3>
+            <span class="entry__date">Sep 2024 – Jun 2026</span>
+          </div>
+          <p class="entry__org">Betfair</p>
+          <ul class="entry__points">
+            <li>
+              Designed, implemented and tested gaming and sports promotions;
+              resolved operational issues and coordinated with stakeholders.
+              Automated repetitive tasks with Python scripts.
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">IT &amp; Network Operator</h3>
+            <span class="entry__date">Mar 2023 – Sep 2024</span>
+          </div>
+          <p class="entry__org">
+            Avram Iancu International Airport, Cluj-Napoca
+          </p>
+          <ul class="entry__points">
+            <li>
+              Monitored and maintained computers, peripherals and network equipment
+              to ensure reliability and security.
+            </li>
+            <li>
+              Installed and configured operating systems and applications; managed
+              user and network access within security policy.
+            </li>
+            <li>
+              Set up and troubleshot network devices and connectivity, applying
+              security best practices.
+            </li>
+            <li>
+              Implemented data backup and recovery procedures to protect user data
+              and support quick recovery.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Projects -->
+      <section class="section">
+        <h2 class="section__title">Projects</h2>
+
+        <article class="entry">
+          <h3 class="entry__role">Self-Hosted Home Lab</h3>
+          <p class="entry__org">Proxmox • Terraform • Docker/LXC • Cloudflare</p>
+          <ul class="entry__points">
+            <li>
+              Run a Proxmox server hosting 13+ containerized services. Built an
+              automated media pipeline (Radarr/Sonarr + Prowlarr + qBittorrent +
+              Bazarr) where a single request triggers automatic download of media
+              and subtitles, with Overseerr for requests and Maintainerr for
+              automated library cleanup.
+            </li>
+            <li>
+              Exposed services securely from behind CGNAT using Cloudflare Tunnel
+              (cloudflared), with Nginx Proxy Manager as reverse proxy, Cloudflare
+              Access for authentication, and AdGuard DNS rewrites routing each
+              service to its internal host over HTTPS.
+            </li>
+            <li>
+              Built end-to-end monitoring with Prometheus, Grafana and Uptime Kuma,
+              with automated alerting on Telegram.
+            </li>
+            <li>
+              Provisioned the lab's containers as Infrastructure as Code with
+              Terraform, so the whole stack can be rebuilt on a fresh Proxmox node
+              with a single command.
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <h3 class="entry__role">Cinemate</h3>
+          <p class="entry__org">TypeScript • Cloudflare Workers • CI/CD</p>
+          <ul class="entry__points">
+            <li>
+              Built a Tinder-style movie/series matching web app on Cloudflare
+              Workers, using D1, KV and R2 for storage and hosting.
+            </li>
+            <li>
+              Set up an automated GitHub Actions pipeline that builds and deploys to
+              Cloudflare on every merge to main, with credentials managed through
+              GitHub Secrets.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Skills -->
+      <section class="section">
+        <h2 class="section__title">Skills</h2>
+        <dl class="skills">
+          <div class="skills__row">
+            <dt>Containers &amp; Orchestration</dt>
+            <dd>Docker, Kubernetes, LXC</dd>
+          </div>
+          <div class="skills__row">
+            <dt>CI/CD</dt>
+            <dd>Jenkins, GitHub Actions, GitLab CI</dd>
+          </div>
+          <div class="skills__row">
+            <dt>Cloud &amp; Infra</dt>
+            <dd>
+              AWS, Cloudflare (Tunnel, Access, Workers, R2, D1), Proxmox, Terraform
+            </dd>
+          </div>
+          <div class="skills__row">
+            <dt>Monitoring</dt>
+            <dd>Prometheus, Grafana, Uptime Kuma</dd>
+          </div>
+          <div class="skills__row">
+            <dt>Linux &amp; Scripting</dt>
+            <dd>Linux, Bash, Python, Git, JavaScript</dd>
+          </div>
+          <div class="skills__row">
+            <dt>Networking</dt>
+            <dd>
+              DNS, reverse proxy, VPN/Tailscale, firewalls, TCP/IP fundamentals
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <h2 class="section__title">Education</h2>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">DevOps Program</h3>
+            <span class="entry__date">Sep 2025 – Present</span>
+          </div>
+          <p class="entry__org">IT School</p>
+          <ul class="entry__points">
+            <li>
+              Linux, Docker &amp; Kubernetes, CI/CD (Jenkins), Ansible &amp;
+              Terraform, AWS, Prometheus/Grafana.
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <h3 class="entry__role">Bachelor's Degree, Security Studies</h3>
+          <p class="entry__org">Babeș-Bolyai University, Cluj-Napoca</p>
+        </article>
+      </section>
+
+      <!-- Courses -->
+      <section class="section">
+        <h2 class="section__title">Courses</h2>
+        <ul class="tags">
+          <li>Kubernetes for Absolute Beginners</li>
+          <li>CKAD course (Mumshad)</li>
+          <li>Cisco CCST Networking</li>
+          <li>NDG Linux Essentials / Linux I</li>
+        </ul>
+      </section>
+
+      <!-- Languages -->
+      <section class="section">
+        <h2 class="section__title">Languages</h2>
+        <ul class="tags">
+          <li>English (Professional)</li>
+          <li>Romanian (Native)</li>
+        </ul>
+      </section>
+
+      <!-- Footer / visitor counter -->
+      <footer class="footer">
+        <span class="views">Views: <span id="view-count">…</span></span>
+      </footer>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

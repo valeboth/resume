@@ -1,0 +1,26 @@
+{
+  "name": "resume",
+  "version": "0.1.0",
+  "description": "Personal resume website — Cloudflare Worker (Static Assets + KV visitor counter). Deploys to resume.valegboth.win.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "wrangler": "^3.95.0"
+  }
+}
