@@ -4,10 +4,7 @@ on:
   push:
     branches: [main]
 
-# Requires repo secrets (Settings → Secrets and variables → Actions):
-#   CLOUDFLARE_API_TOKEN  — token with Workers Scripts + KV + DNS/Workers Routes
-#   CLOUDFLARE_ACCOUNT_ID — Cloudflare account ID
-# No secrets are hardcoded anywhere in the repo.
+
 
 jobs:
   deploy:
@@ -20,14 +17,11 @@ jobs:
           node-version: 20
           cache: npm
 
-      # `npm install` (not `npm ci`): the lockfile is generated on macOS and omits
-      # Linux-only native binaries (esbuild) that `npm ci` demands on the Linux
-      # runner. `npm install` fetches the correct platform binaries. See npm/cli#4828.
+     
       - name: Install
         run: npm install --no-audit --no-fund
 
-      # A single deploy: ships the Worker + the static frontend (Static Assets)
-      # and provisions the resume.valegboth.win custom domain.
+      
       - name: Deploy Worker + Assets
         run: npx wrangler deploy
         env:
