@@ -1,6 +1,3 @@
-// Visitor counter: on each page load, POST /api/views so the Worker increments
-// the KV-backed total, then render it in the footer. Fails silently so a counter
-// hiccup never breaks the page.
 (async () => {
   const el = document.getElementById("view-count");
   if (!el) return;
